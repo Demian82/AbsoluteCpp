@@ -8,9 +8,30 @@
 그리고 인플레이션에 따라 가격을 측정항여 조정할 수 있는 루프를 사용하여야 한다. (힌트 : 루프 사용.)*/
 
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
-	cout << "Enter the item's cost, "
+	double cost, totalCost, quantity, inflationRate, period, costAfterInfla;
+
+	cout << "Enter the cost of goods : ";
+	cin >> cost;
+	cout << "Enter the quantity purchased per year : ";
+	cin >> quantity;
+	cout << "Enter the inflation rate. : ";
+	cin >> inflationRate;
+	cout << "Enter the period : ";
+	cin >> period;
+
+	totalCost = cost * quantity;
+
+	for (int i = 0; i < period; i++)
+	{
+		costAfterInfla = totalCost * (1+(inflationRate / 100));
+		cout << "Applied iflation rate, total cost of goods " << costAfterInfla << " dollars." << endl;
+		totalCost = costAfterInfla;
+	}
+	
+	return 0;
 }

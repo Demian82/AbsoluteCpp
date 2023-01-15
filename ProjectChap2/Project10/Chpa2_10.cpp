@@ -3,9 +3,12 @@
 여러분의 프로그램은 이 문제에서 주어진 예시뿐만 아니라 텍스트에 있는 어떤 줄의 "hate"에 대해서도 동작하여야 한다.*/
 
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
+	cout << "Hello world" << endl;
 
+	return 0;
 }
