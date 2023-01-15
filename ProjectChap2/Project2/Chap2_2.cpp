@@ -11,7 +11,7 @@
 여러분은 다른 변수들도 사용하고 싶을 수 있다.
 마지막 지불은 채무가 작다면 $50 미만일 것이다.
 하지만 이자를 잊으면 안 된다.
-$50를 빚지고 있는데 매달 $50에 대해 지불하는 것은 여러분의빚 청산에 거의 가까워지긴 할지라도 빚이 모두 갚아지는 것은 아니다.
+$50를 빚지고 있는데 매달 $50에 대해 지불하는 것은 여러분의 빚 청산에 거의 가까워지긴 할지라도 빚이 모두 갚아지는 것은 아니다.
 $50에 대한 1개월 이자는 단지 75센트이다.*/
 
 #include <iostream>
@@ -19,5 +19,22 @@ using namespace std;
 
 int main()
 {
+	double loanedMoney, interestRate, count;
 
+	cout << "Enter your loan : ";
+	cin >> loanedMoney;
+	cout << "Enter interest rate : ";
+	cin >> interestRate;
+
+	count = 0;
+
+	while (loanedMoney >= 0)
+	{
+		loanedMoney = loanedMoney - (50 - (loanedMoney * interestRate));
+		cout << "The remaining loan : " << loanedMoney << endl;
+		count++;
+		cout << "The reamining month : " << count << endl;
+	}
+	
+	return 0;
 }

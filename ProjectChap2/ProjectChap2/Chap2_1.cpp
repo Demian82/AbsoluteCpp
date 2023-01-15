@@ -28,10 +28,10 @@ int main()
 
 	for (int i = 0; i < period; i++)
 	{
-		costAfterInfla = totalCost * (1+(inflationRate / 100));
+		costAfterInfla = totalCost * (1 + (inflationRate / 100));
 		cout << "Applied iflation rate, total cost of goods " << costAfterInfla << " dollars." << endl;
 		totalCost = costAfterInfla;
 	}
-	
+
 	return 0;
 }
