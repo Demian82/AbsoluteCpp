@@ -1,5 +1,5 @@
 /*자판기에서 초콜릿 바를 개당 $1에 살 수 있다고 가정하자.
-모든 초콜릿 바 아네는 쿠폰이 들어 있다.
+모든 초콜릿 바 안에는 쿠폰이 들어 있다.
 여러분은 자판기에서 7개의 쿠폰으로 1개의 초콜릿 바를 돌려받을 수 있다.
 여러분은 n달러를 가지고 있을 때 쿠폰으로 돌려받은 초콜릿을 포함해서 몇 개의 초콜릿 바를 먹을 수 있을지 알고 싶다.
 예를 들어 $20를 가지고 있다면 처음에는 20개의 초콜릿 바를 살 수 있다.
@@ -17,5 +17,22 @@ using namespace std;
 
 int main()
 {
+	int dollars, chocolateBar, coupons, temp = 0;
 
+	cout << "Enter dollars you have : ";
+	cin >> dollars; //20
+
+	coupons = dollars;
+	chocolateBar = coupons;
+
+	do
+	{
+		chocolateBar += coupons / 7;
+		coupons = coupons / 7 + coupons % 7;
+	} while (coupons > 7);
+
+	cout << "The number of chocolate Bars : " << chocolateBar << endl;
+	cout << "The number of coupons reamining : " << coupons << endl;
+
+	return 0;
 }

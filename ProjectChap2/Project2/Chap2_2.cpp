@@ -23,7 +23,7 @@ int main()
 
 	cout << "Enter your loan : ";
 	cin >> loanedMoney;
-	cout << "Enter interest rate : ";
+	cout << "Enter interest rate(5% is 0.05) : ";
 	cin >> interestRate;
 
 	count = 0;
