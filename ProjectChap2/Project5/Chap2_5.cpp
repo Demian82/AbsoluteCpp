@@ -13,7 +13,7 @@ TOO + TOO + TOO + TOO = GOOD
 루프들은 체계적으로 각각의 문자에 0부터 9까지의 숫자를 배정한다.
 예를 들면, 처음에 이 루프는 T = 0, O = 0, G = 0, D = 0을 시도한 후 T = 0, O = 0, G = 0, G = 0, D = 1
 그 다음엔 T = 0, O = 0, G = 0, D = 2 등등, T = 9, O = 9, G = 9, D = 9까지 시도한다.
-루프 바디 안에서 각각의 변수는 고유한 값을 가지면서 방정식을 만족ㅅ키는지 테스트한다.
+루프 바디 안에서 각각의 변수는 고유한 값을 가지면서 방정식을 만족시키는지 테스트한다.
 방정시을 만족하는 문자의 값을 출력하라.*/
 
 #include <iostream>
@@ -21,5 +21,47 @@ using namespace std;
 
 int main()
 {
+	int T = 0, O = 0, G = 0, D = 0, TOO, GOOD;
+	
+	do
+	{
+		if (T < 10)
+		{
+			if (O < 10)
+			{
+				if (G < 10)
+				{
+					if (D < 10)
+					{
+						D++;
+						TOO = T * 100 + O * 10 + O;
+						GOOD = G * 1000 + O * 100 + O * 10 + D;
+						if (TOO * 4 == GOOD && (T != O && T != G && T != D && O != G && O != D && G != D))
+							break;
+						else
+							continue;
+					}
+					else
+					{
+						G++;
+						D = 0;
+					}
+				}
+				else
+				{
+					O++;
+					G = 0;
+				}
+			}
+			else
+			{
+				T++;
+				O = 0;
+			}
+		}
+	} while (true);
 
+	cout << "T = " << T << ", O = " << O << ", G = " << G << ", D = " << D;
+
+	return 0;
 }
